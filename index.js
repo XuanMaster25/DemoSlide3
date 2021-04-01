@@ -1,6 +1,6 @@
 var http = require('http');
 var fs = require('fs');
-var port = process.env.port || 3000;
+var port = process.env.PORT || 5000;
 
 http.createServer(function (rep, res){
     res.writeHead(200,{'Content-type' : 'text/html'});
