@@ -21,6 +21,15 @@ http.createServer(function (rep, res){
             if (err) throw err;
             res.write(data);
         })
+    }else  if (url == '/'){
+        fs.readFile('demo.html',function (error,data){
+            if (error != null){
+                res.end(error);
+            }else {
+                res.write(data);
+                res.end();
+            }
+        })
     }else if (url == '/create'){
         fs.writeFile('test.txt', '\n tk mk', function (err){
             if (err){
